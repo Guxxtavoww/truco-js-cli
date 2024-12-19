@@ -1,0 +1,1 @@
+# An app to study how to build CLI apps with node (Bun).
