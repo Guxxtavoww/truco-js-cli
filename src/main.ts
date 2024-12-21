@@ -23,6 +23,12 @@ async function main() {
   };
 
   while (true) {
+    if (playerScore >= 12 || botScore >= 12) {
+      log.message(`Jogo acabou vencedor: ${botScore >= 12 ? 'Bot' : 'Player'}`);
+
+      break;
+    }
+
     const s = spinner();
 
     s.start('Embaralhando cartas...');
