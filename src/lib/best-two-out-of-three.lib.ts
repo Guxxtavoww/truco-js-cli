@@ -15,11 +15,15 @@ export enum MatchResult {
 export async function bestTwoOutOfThree(
   playerHand: TrucoCard[],
   botHand: TrucoCard[],
-  flippedCard: TrucoCard,
-  game_state: GameState
+  flippedCard: TrucoCard
 ): Promise<MatchResult> {
   let playerWins = 0;
   let botWins = 0;
+
+  const game_state: GameState = {
+    last_to_bet: null,
+    state: 'default',
+  };
 
   const roundResults: MatchResult[] = [];
   const manilhas = getManilhas(flippedCard);

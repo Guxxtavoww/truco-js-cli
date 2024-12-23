@@ -17,11 +17,6 @@ async function main() {
   let playerScore = 0;
   let botScore = 0;
 
-  const game_state: GameState = {
-    last_to_bet: null,
-    state: 'default',
-  };
-
   while (true) {
     if (playerScore >= 12 || botScore >= 12) {
       log.message(`Jogo acabou vencedor: ${botScore >= 12 ? 'Bot' : 'Player'}`);
@@ -51,7 +46,6 @@ async function main() {
       playerCards,
       botCards,
       flipped_card,
-      game_state
     );
 
     switch (winner) {
