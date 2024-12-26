@@ -17,6 +17,8 @@ export async function bestTwoOutOfThree(
   const game_state: GameState = {
     last_to_bet: null,
     state: 'default',
+    currentBet: null,
+    playerAccepted: true,
   };
 
   const roundResults: MatchResult[] = [];
