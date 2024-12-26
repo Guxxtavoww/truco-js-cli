@@ -2,13 +2,10 @@ import color from 'picocolors';
 import { intro, log, spinner } from '@clack/prompts';
 import { setTimeout as sleep } from 'node:timers/promises';
 
-import {
-  bestTwoOutOfThree,
-  MatchResult,
-} from './lib/best-two-out-of-three.lib';
 import { cards } from './lib/cards.lib';
-import type { GameState } from './lib/types';
+import { MatchResult } from './lib/types';
 import { shuffle } from './utils/shuffle.util';
+import { bestTwoOutOfThree } from './lib/best-two-out-of-three.lib';
 
 async function main() {
   console.clear();
@@ -42,11 +39,7 @@ async function main() {
 
     if (!flipped_card) throw new Error('Vira inválido');
 
-    const winner = await bestTwoOutOfThree(
-      playerCards,
-      botCards,
-      flipped_card,
-    );
+    const winner = await bestTwoOutOfThree(playerCards, botCards, flipped_card);
 
     switch (winner) {
       case MatchResult.PlayerWon:

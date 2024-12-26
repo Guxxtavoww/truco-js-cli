@@ -9,3 +9,9 @@ export interface GameState {
   last_to_bet: LastToBet | null;
   state: (typeof states)[number];
 }
+
+export enum MatchResult {
+  PlayerWon = 'player',
+  BotWon = 'bot',
+  Tie = 'tie',
+}

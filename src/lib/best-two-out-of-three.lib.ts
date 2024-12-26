@@ -2,15 +2,9 @@ import { outro, spinner, log } from '@clack/prompts';
 import { setTimeout as sleep } from 'node:timers/promises';
 
 import { playCard } from './bot.lib';
-import type { GameState } from './types';
 import { handlePlayCard } from './player.lib';
+import { type GameState, MatchResult } from './types';
 import { getHighestCard, getManilhas, type TrucoCard } from './cards.lib';
-
-export enum MatchResult {
-  PlayerWon = 'player',
-  BotWon = 'bot',
-  Tie = 'tie',
-}
 
 export async function bestTwoOutOfThree(
   playerHand: TrucoCard[],
